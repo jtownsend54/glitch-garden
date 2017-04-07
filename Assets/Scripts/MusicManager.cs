@@ -21,7 +21,7 @@ public class MusicManager : MonoBehaviour {
 	}
 
 	public void PlayClip(int level) {
-		Debug.Log (levelClips [level]);
+		Debug.Log ("Level: " + level);
 		if (!levelClips [level]) {
 			return;
 		}
