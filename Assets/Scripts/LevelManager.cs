@@ -2,6 +2,16 @@
 using System.Collections;
 
 public class LevelManager : MonoBehaviour {
+	public float autoLoadTime;
+
+	void Start() {
+		if (autoLoadTime == 0) {
+			return;
+		}
+
+		Invoke ("LoadNextLevel", autoLoadTime);
+	}
+
 	public void LoadLevel(string name) {
 		Debug.Log("Load the level: " + name);
 		Application.LoadLevel (name);
