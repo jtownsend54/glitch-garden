@@ -32,6 +32,10 @@ public class MusicManager : MonoBehaviour {
 		source.Play ();
 	}
 
+	public void ChangeVolume(float volume) {
+		source.volume = volume;
+	}
+
 	// Update is called once per frame
 //	void Update () {
 //	
