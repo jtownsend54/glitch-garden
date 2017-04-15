@@ -6,7 +6,7 @@
       <File FileName="Assets/Scripts/MusicManager.cs" Line="36" Column="26" />
       <File FileName="Assets/Scripts/FadeInPanel.cs" Line="19" Column="58" />
       <File FileName="Assets/Scripts/PlayerPrefsManager.cs" Line="17" Column="42" />
-      <File FileName="Assets/Scripts/OptionsController.cs" Line="26" Column="52" />
+      <File FileName="Assets/Scripts/OptionsController.cs" Line="33" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
