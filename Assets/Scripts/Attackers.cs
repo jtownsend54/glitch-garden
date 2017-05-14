@@ -17,7 +17,17 @@ public class Attackers : MonoBehaviour {
 		transform.Translate (Vector3.left * walkSpeed * Time.deltaTime);
 	}
 
+	void SetWalkSpeed(float speed) {
+		walkSpeed = speed;
+	}
+
 	void OnTriggerEnter2D(Collider2D collider) {
 		Debug.Log (gameObject + " collided with " + collider.gameObject);
+		//Animator animator = gameObject.GetComponent<Animator> ();
+//		animator.
+	}
+
+	void StrikeCurrentTarget(float damage) {
+		Debug.Log ("Damage " + damage);
 	}
 }
