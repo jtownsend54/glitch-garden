@@ -5,7 +5,7 @@ public class LevelManager : MonoBehaviour {
 	public float autoLoadTime;
 
 	void Start() {
-		if (autoLoadTime == 0) {
+		if (autoLoadTime <= 0) {
 			return;
 		}
 
