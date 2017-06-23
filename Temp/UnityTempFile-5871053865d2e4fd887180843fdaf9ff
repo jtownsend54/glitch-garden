@@ -44,6 +44,7 @@
 -define:UNITY_EDITOR
 -define:UNITY_EDITOR_OSX
 -define:UNITY_TEAM_LICENSE
+'Assets/Cactus.cs'
 'Assets/Defenders.cs'
 'Assets/Fox.cs'
 'Assets/Scripts/Attackers.cs'
@@ -54,5 +55,6 @@
 'Assets/Scripts/PlayerPrefsManager.cs'
 'Assets/Scripts/Projectile.cs'
 'Assets/Scripts/SplashScreen.cs'
+'Assets/Stone.cs'
 -r:'/Applications/Unity 4.7.2/Unity4.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity 4.7.2/Unity4.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'

@@ -1,23 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Fox.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Lizard.cs">
     <Files>
       <File FileName="Assets/Scripts/LevelManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/MusicManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/FadeInPanel.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Attackers.cs" Line="11" Column="25" />
+      <File FileName="Assets/Scripts/Attackers.cs" Line="1" Column="1" />
       <File FileName="Assets/Defenders.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Projectile.cs" Line="1" Column="1" />
-      <File FileName="Assets/Fox.cs" Line="25" Column="4" />
+      <File FileName="Assets/Fox.cs" Line="24" Column="8" />
+      <File FileName="Assets/Lizard.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Scripts" expanded="True" />
-            <Node name="Fox.cs" selected="True" />
-          </Node>
-        </State>
+        <State expanded="True" selected="True" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

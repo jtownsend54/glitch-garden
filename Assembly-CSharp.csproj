@@ -46,8 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Cactus.cs" />
      <Compile Include="Assets\Defenders.cs" />
      <Compile Include="Assets\Fox.cs" />
+     <Compile Include="Assets\Lizard.cs" />
      <Compile Include="Assets\Scripts\Attackers.cs" />
      <Compile Include="Assets\Scripts\FadeInPanel.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
