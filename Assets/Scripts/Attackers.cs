@@ -6,15 +6,22 @@ public class Attackers : MonoBehaviour {
 	[Range(-1, 1)]
 	public float walkSpeed;
 
+	public Animator animator;
+
+	private GameObject currentTarget;
+
 	// Use this for initialization
 	void Start () {
-//		Rigidbody2D body = gameObject.AddComponent<Rigidbody2D> ();
-//		body.isKinematic = true;
+		animator = gameObject.GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		transform.Translate (Vector3.left * walkSpeed * Time.deltaTime);
+
+		if (!currentTarget) {
+			animator.SetBool("isAttacking", false);
+		}
 	}
 
 	void SetWalkSpeed(float speed) {
@@ -22,12 +29,16 @@ public class Attackers : MonoBehaviour {
 	}
 
 //	void OnTriggerEnter2D(Collider2D collider) {
-//		Debug.Log (gameObject + " collided with " + collider.gameObject);
-//		//Animator animator = gameObject.GetComponent<Animator> ();
-////		animator.
+//		currentTarget = collider.gameObject;
 //	}
 
 	void StrikeCurrentTarget(float damage) {
-		Debug.Log ("Damage " + damage);
+		if (currentTarget && currentTarget.GetComponent<Health>()) {
+			currentTarget.GetComponent<Health>().DealDamage(damage);
+		}
+	}
+
+	public void SetCurrentTarget (GameObject defender) {
+		currentTarget = defender;
 	}
 }

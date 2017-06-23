@@ -2,11 +2,13 @@
 using System.Collections;
 
 public class Fox : MonoBehaviour {
-	Animator animator;
+	private Animator animator;
+	private Attackers attackerComponent;
 
 	// Use this for initialization
 	void Start () {
 		animator = gameObject.GetComponent<Animator> ();
+		attackerComponent = GetComponent<Attackers> ();
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
@@ -22,7 +24,10 @@ public class Fox : MonoBehaviour {
 			return;
 		}
 
-		// Will attack anything else
-		animator.SetTrigger("isAttacking");
+		attackerComponent.SetCurrentTarget (target);
+
+		// Will attack anything else, change animation to attacking
+		animator.SetBool("isAttacking", true);
+
 	}
 }
