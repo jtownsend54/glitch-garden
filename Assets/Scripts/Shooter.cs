@@ -11,5 +11,8 @@ public class Shooter : MonoBehaviour {
 	public void Fire() {
 		GameObject newProjectile = Instantiate (projectile) as GameObject;
 		newProjectile.transform.position = gameObject.transform.Find("Gun").position;
+
+		// Make sure any spawned projectiles go under the Projectiles object
+		newProjectile.transform.SetParent (projectileParent.transform);
 	}
 }

@@ -28,6 +28,5 @@ public class Fox : MonoBehaviour {
 
 		// Will attack anything else, change animation to attacking
 		animator.SetBool("isAttacking", true);
-
 	}
 }
