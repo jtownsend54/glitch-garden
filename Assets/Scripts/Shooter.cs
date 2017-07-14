@@ -21,9 +21,7 @@ public class Shooter : MonoBehaviour {
 	public void Fire() {
 		GameObject newProjectile = Instantiate (projectile) as GameObject;
 		// Make sure any spawned projectiles go under the Projectiles object
-		// Setting the parent of a transform which resides in a prefab is disabled to prevent data corruption.
 		newProjectile.transform.parent = projectileParent.gameObject.transform;
-		//newProjectile.transform.position
 		newProjectile.transform.position = gameObject.transform.Find("Gun").position;
 
 

@@ -15,15 +15,16 @@ public class Projectile : MonoBehaviour {
 		gameObject.transform.Translate (Vector3.right * speed * Time.deltaTime);
 	}
 
-	void OnCollisionEnter2D(Collision2D collision) {
-		Debug.Log (collision.gameObject);
-		Health health = collision.gameObject.GetComponent<Health> ();
+	void OnTriggerEnter2D(Collider2D collider) {
+		if (!collider.gameObject.GetComponent<Attackers> ()) {
+			return;
+		}
+	
+		Health health = collider.gameObject.GetComponent<Health> ();
 
+		// Handles destruction of the object too
 		health.DealDamage (damage);
 
-		// Destroy the attacker
-		if (health.health <= damage) {
-			Destroy(collision.gameObject);
-		}
+		Destroy (gameObject);
 	}
 }

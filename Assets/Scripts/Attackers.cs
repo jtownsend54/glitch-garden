@@ -8,7 +8,7 @@ public class Attackers : MonoBehaviour {
 
 	public Animator animator;
 
-	private GameObject currentTarget;
+	private GameObject currentTarget, projectile;
 
 	// Use this for initialization
 	void Start () {
@@ -27,10 +27,6 @@ public class Attackers : MonoBehaviour {
 	void SetWalkSpeed(float speed) {
 		walkSpeed = speed;
 	}
-
-//	void OnTriggerEnter2D(Collider2D collider) {
-//		currentTarget = collider.gameObject;
-//	}
 
 	void StrikeCurrentTarget(float damage) {
 		if (currentTarget && currentTarget.GetComponent<Health>()) {
