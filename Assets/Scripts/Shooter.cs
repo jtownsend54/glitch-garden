@@ -24,6 +24,6 @@ public class Shooter : MonoBehaviour {
 		newProjectile.transform.parent = projectileParent.gameObject.transform;
 		newProjectile.transform.position = gameObject.transform.Find("Gun").position;
 
-
+		Debug.Log (DefenderButton.defender);
 	}
 }
