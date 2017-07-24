@@ -44,9 +44,11 @@
 -define:UNITY_EDITOR
 -define:UNITY_EDITOR_OSX
 -define:UNITY_TEAM_LICENSE
-'Assets/DefenderBuyton.cs'
+'Assets/Scripts/AttackerSpawner.cs'
 'Assets/Scripts/Attackers.cs'
 'Assets/Scripts/Cactus.cs'
+'Assets/Scripts/DefenderButton.cs'
+'Assets/Scripts/DefenderSpawner.cs'
 'Assets/Scripts/Defenders.cs'
 'Assets/Scripts/FadeInPanel.cs'
 'Assets/Scripts/Fox.cs'

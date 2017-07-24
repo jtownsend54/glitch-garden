@@ -47,6 +47,7 @@
 'Assets/Scripts/Attackers.cs'
 'Assets/Scripts/Cactus.cs'
 'Assets/Scripts/DefenderButton.cs'
+'Assets/Scripts/DefenderSpawner.cs'
 'Assets/Scripts/Defenders.cs'
 'Assets/Scripts/FadeInPanel.cs'
 'Assets/Scripts/Fox.cs'

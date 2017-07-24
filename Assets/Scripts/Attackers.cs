@@ -5,6 +5,7 @@ public class Attackers : MonoBehaviour {
 
 	[Range(-1, 1)]
 	public float walkSpeed;
+	public float spawnRate;
 
 	public Animator animator;
 
