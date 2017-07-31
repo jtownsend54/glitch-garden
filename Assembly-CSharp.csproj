@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Shooter.cs" />
      <Compile Include="Assets\Scripts\Shredder.cs" />
      <Compile Include="Assets\Scripts\SplashScreen.cs" />
+     <Compile Include="Assets\Scripts\StarDisplay.cs" />
      <Compile Include="Assets\Scripts\Stone.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity 4.7.2/Unity4.app/Contents/UnityExtensions/Unity/GUISystem/4.7.2/Standalone/UnityEngine.UI.dll</HintPath>
