@@ -11,7 +11,6 @@ public class Defenders : MonoBehaviour {
 	}
 
 	public void AddStars(int amount) {
-		Debug.Log ("Added stars");
 		starDisplay.AddStars (amount);
 	}
 }
