@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class StarDisplay : MonoBehaviour {
-	static int availableStars = 50;
+	static int availableStars = 200;
 	private Text display;
 	public enum Status { SUCCESS, FAILURE };
 
