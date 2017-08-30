@@ -4,6 +4,7 @@ using System.Collections;
 public class AttackerSpawner : MonoBehaviour {
 	public GameObject[] attackers;
 	private GameObject attackerOrganizer;
+	public float startDelay;
 
 	// Use this for initialization
 	void Start () {
@@ -12,10 +13,17 @@ public class AttackerSpawner : MonoBehaviour {
 		if (!attackerOrganizer) {
 			attackerOrganizer = new GameObject("Attackers");
 		}
+
+		startDelay = GameObject.FindObjectOfType<GameTimer> ().startDelay;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		// Delay loading enemies until startDelay has elapsed
+		if (Time.timeSinceLevelLoad < startDelay) {
+			return;
+		}
+
 		foreach (GameObject thisAttacker in attackers) {
 			if (isTimeToSpawn(thisAttacker)) {
 				Spawn(thisAttacker);

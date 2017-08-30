@@ -10,10 +10,11 @@ public class GameTimer : MonoBehaviour {
 	private AudioSource audio;
 	private bool isEndOfLevel = false;
 	private Text winMessage;
+	public float startDelay = 10f;
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating ("MoveTimer", 1f, interval);
+		InvokeRepeating ("MoveTimer", startDelay, interval);
 		timer = gameObject.GetComponent<Slider> ();
 		audio = gameObject.GetComponent<AudioSource> ();
 		winMessage = GameObject.Find ("Win Message").GetComponent<Text> ();
