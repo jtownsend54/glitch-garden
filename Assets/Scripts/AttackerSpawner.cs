@@ -5,6 +5,7 @@ public class AttackerSpawner : MonoBehaviour {
 	public GameObject[] attackers;
 	private GameObject attackerOrganizer;
 	public float startDelay;
+	public static bool allowSpawn;
 
 	// Use this for initialization
 	void Start () {
@@ -14,13 +15,14 @@ public class AttackerSpawner : MonoBehaviour {
 			attackerOrganizer = new GameObject("Attackers");
 		}
 
+		allowSpawn = true;
 		startDelay = GameObject.FindObjectOfType<GameTimer> ().startDelay;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		// Delay loading enemies until startDelay has elapsed
-		if (Time.timeSinceLevelLoad < startDelay) {
+		if (Time.timeSinceLevelLoad < startDelay || !allowSpawn) {
 			return;
 		}
 
@@ -57,5 +59,9 @@ public class AttackerSpawner : MonoBehaviour {
 		float threshold = spawnsPerSecond * Time.deltaTime / 5;
 
 		return Random.value < threshold;
+	}
+
+	public static int attackersLeft() {
+		return GameObject.FindObjectsOfType<Attackers> ().Length;
 	}
 }

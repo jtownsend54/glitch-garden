@@ -8,7 +8,6 @@ public class GameTimer : MonoBehaviour {
 	private float interval = .1f;
 	private Slider timer;
 	private AudioSource audio;
-	private bool isEndOfLevel = false;
 	private Text winMessage;
 	public float startDelay = 10f;
 
@@ -22,13 +21,15 @@ public class GameTimer : MonoBehaviour {
 	}
 
 	void Update () {
-		if (timer.value >= timer.maxValue && !isEndOfLevel) {
-			isEndOfLevel = true;
+		if (timer.value >= timer.maxValue && AttackerSpawner.allowSpawn) {
+			AttackerSpawner.allowSpawn = false;
+		}
 
+		// If spawning has stopped (timer ended) and there are no attackers, move
+		// to the next level
+		if (!AttackerSpawner.allowSpawn && AttackerSpawner.attackersLeft() == 0) {
 			winMessage.enabled = true;
-
 			audio.Play();
-
 			Invoke("LoadNextLevel", audio.clip.length);
 		}
 	}
