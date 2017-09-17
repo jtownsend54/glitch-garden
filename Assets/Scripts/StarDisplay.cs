@@ -3,15 +3,17 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class StarDisplay : MonoBehaviour {
-	static int availableStars = 50;
+	int startingStars = 50;
+	static int availableStars;
 	private Text display;
 	public enum Status { SUCCESS, FAILURE };
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log (availableStars);
-		display = gameObject.GetComponent<Text> ();
-		display.text = availableStars.ToString ();
+		Debug.Log (startingStars);
+		display 		= gameObject.GetComponent<Text> ();
+		display.text 	= startingStars.ToString ();
+		availableStars 	= startingStars;
 	}
 
 	public void AddStars(int amount) {
