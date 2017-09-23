@@ -36,7 +36,6 @@ public class Shooter : MonoBehaviour {
 
 	bool hasAttackerInLane() {
 		if (laneSpawner.transform.childCount <= 0) {
-			Debug.LogError("No Spawner Set");
 			return false;
 		}
 

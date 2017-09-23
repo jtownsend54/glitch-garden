@@ -30,6 +30,8 @@ public class GameTimer : MonoBehaviour {
 		if (!AttackerSpawner.allowSpawn && AttackerSpawner.attackersLeft() == 0) {
 			winMessage.enabled = true;
 			audio.Play();
+			Destroy(GameObject.Find ("Defenders"));
+			Destroy(GameObject.Find ("StarFlower"));
 			Invoke("LoadNextLevel", audio.clip.length);
 		}
 	}
