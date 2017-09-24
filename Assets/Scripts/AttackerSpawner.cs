@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class AttackerSpawner : MonoBehaviour {
 	public GameObject[] attackers;
 	private GameObject attackerOrganizer;
 	public float startDelay;
 	public static bool allowSpawn;
+	public GameTimer timer;
+	private float levelTime;
 
 	// Use this for initialization
 	void Start () {
@@ -15,8 +18,10 @@ public class AttackerSpawner : MonoBehaviour {
 			attackerOrganizer = new GameObject("Attackers");
 		}
 
+		timer = GameObject.FindObjectOfType<GameTimer>();
+
 		allowSpawn = true;
-		startDelay = GameObject.FindObjectOfType<GameTimer> ().startDelay;
+		startDelay = timer.startDelay;
 	}
 	
 	// Update is called once per frame
@@ -55,10 +60,10 @@ public class AttackerSpawner : MonoBehaviour {
 			Debug.LogWarning("Frame rate is too fast to spawn attacker");
 		}
 
+		double chance = ((Math.Pow (1.03, System.Convert.ToDouble (Time.timeSinceLevelLoad))) / 1000 * spawnsPerSecond) + .00001;
+		float random = UnityEngine.Random.value;
 
-		float threshold = spawnsPerSecond * Time.deltaTime / 5;
-
-		return Random.value < threshold;
+		return random < chance;
 	}
 
 	public static int attackersLeft() {
