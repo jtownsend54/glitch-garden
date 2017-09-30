@@ -23,13 +23,22 @@ public class DefenderSpawner : MonoBehaviour {
 	void OnMouseDown() {
 		GameObject defenderPrefab = DefenderButton.defender;
 
+		Vector3 position = Input.mousePosition;
+		Vector2 placement = CalculateWorldPointOfMouseClick (position);
+
+		// Check for an existing defender already at placements x/y
+		foreach (Defenders curDefender in defenderOrganizer.GetComponentsInChildren<Defenders>()) {
+			if (curDefender.transform.position.x == placement.x && curDefender.transform.position.y == placement.y) {
+				return;
+			}
+		}
+
 		if (starDisplay.UseStars (defenderPrefab.GetComponent<Defenders> ().starCost) == StarDisplay.Status.FAILURE) {
 			Debug.Log("Not enough star power");
 			return;
 		}
 
-		Vector3 position = Input.mousePosition;
-		GameObject defender = Instantiate (defenderPrefab, CalculateWorldPointOfMouseClick (position), Quaternion.identity) as GameObject;
+		GameObject defender = Instantiate (defenderPrefab, placement, Quaternion.identity) as GameObject;
 		defender.transform.parent = defenderOrganizer.transform;
 	}
 
